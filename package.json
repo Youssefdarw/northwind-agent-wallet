@@ -2,6 +2,7 @@
   "name": "northwind-agent-wallet",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "description": "Concept demo: an AI agent pays Northwind Industrial's monthly bills with x402 + USDC on Base Sepolia, inside limits enforced by deterministic code.",
   "type": "module",
   "engines": {

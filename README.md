@@ -231,3 +231,7 @@ data/          runtime state (git-ignored)
 
 Built with [Claude Code](https://claude.com/claude-code). The agent in the demo runs on
 Claude (`claude-opus-5-5`) through the Anthropic API.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
