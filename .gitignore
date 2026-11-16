@@ -1,0 +1,20 @@
+# Secrets: private keys live ONLY here
+.env
+.env.*
+!.env.example
+
+# Runtime data (mandates, run logs)
+data/
+
+# Deps & builds
+node_modules/
+dist/
+web/dist/
+
+# OS / editor
+.DS_Store
+*.log
+.claude/settings.local.json
+
+# Read-only snapshot (npm run snapshot)
+share/

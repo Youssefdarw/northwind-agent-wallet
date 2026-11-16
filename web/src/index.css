@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  /* Latin glyphs from Inter, Arabic glyphs fall through to IBM Plex Sans Arabic. */
+  --font-sans: "Inter", "IBM Plex Sans Arabic", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --color-brand-50: #eef4fb;
+  --color-brand-100: #d5e3f3;
+  --color-brand-600: #1d4f86;
+  --color-brand-700: #163f6c;
+  --color-brand-800: #0f2a4a;
+  --color-brand-900: #0a1d33;
+  --color-accent-400: #fbbf24;
+  --color-accent-500: #f59e0b;
+}
+
+body {
+  @apply bg-slate-100 text-slate-800 antialiased;
+}
+
+/* Arabic reads better a touch larger and with more line height; italics don't exist in Arabic type. */
+:root[lang="ar"] body {
+  font-family: "IBM Plex Sans Arabic", "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+:root[lang="ar"] .italic {
+  font-style: normal;
+}
+[dir="auto"]:lang(ar),
+:root[lang="ar"] p {
+  line-height: 1.7;
+}
+
+.card {
+  @apply rounded-xl border border-slate-200 bg-white shadow-sm;
+}
+
+.input {
+  @apply w-full rounded-lg bg-white px-3 py-2 text-sm text-slate-900 ring-1 ring-inset ring-slate-300 outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-brand-600;
+}
+
+.stripes {
+  background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.45) 0 6px, transparent 6px 12px);
+}

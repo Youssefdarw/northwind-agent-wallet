@@ -1,0 +1,55 @@
+{
+  "name": "northwind-agent-wallet",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Concept demo: an AI agent pays Northwind Industrial's monthly bills with x402 + USDC on Base Sepolia, inside limits enforced by deterministic code.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "wallets:generate": "tsx scripts/generate-wallets.ts",
+    "wallets:balance": "tsx scripts/balance.ts",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p web",
+    "merchants": "tsx scripts/merchants.ts",
+    "pay:one": "tsx scripts/pay-one.ts",
+    "verify:tx": "tsx scripts/verify-tx.ts",
+    "test": "vitest run",
+    "reset": "tsx scripts/reset.ts",
+    "agent": "tsx scripts/agent.ts",
+    "approve": "tsx scripts/approve.ts",
+    "api": "tsx src/api/server.ts",
+    "web": "vite --config web/vite.config.ts",
+    "build:web": "vite build --config web/vite.config.ts",
+    "dashboard": "concurrently -k -n merchants,api,web -c gray,blue,magenta \"npm:merchants\" \"npm:api\" \"npm:web\"",
+    "snapshot": "tsx scripts/snapshot.ts",
+    "demo": "tsx scripts/demo.ts",
+    "api:readonly": "READ_ONLY=1 tsx src/api/server.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "1.8.0",
+    "@x402/core": "2.31.0",
+    "@x402/evm": "2.31.0",
+    "@x402/express": "2.31.0",
+    "@x402/fetch": "2.31.0",
+    "dotenv": "18.0.10",
+    "express": "5.3.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "viem": "2.57.20"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.3.5",
+    "@types/express": "5.0.6",
+    "@types/node": "26.6.6",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.3.0",
+    "concurrently": "10.0.7",
+    "tailwindcss": "4.3.5",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "vite": "8.3.8",
+    "vitest": "5.1.0"
+  }
+}

@@ -1,0 +1,26 @@
+<!doctype html><html lang="en" dir="ltr"><head><meta charset="utf-8"><style>
+@page { size: A4; margin: 18mm; }
+body { font-family: -apple-system, "Helvetica Neue", Arial, "Geeza Pro", sans-serif; color:#1f2937; font-size:12px; }
+.top { display:flex; justify-content:space-between; align-items:flex-start; border-bottom:3px solid #7c3aed; padding-bottom:14px; }
+.brand { font-size:22px; font-weight:800; color:#7c3aed; }
+.muted { color:#6b7280; }
+h1 { font-size:26px; margin:0; letter-spacing:2px; color:#111827; }
+table { width:100%; border-collapse:collapse; margin-top:22px; }
+th { text-align:start; background:#f3f4f6; padding:8px; font-size:11px; text-transform:uppercase; color:#4b5563; }
+td { padding:8px; border-bottom:1px solid #e5e7eb; }
+.num { text-align:end; font-variant-numeric: tabular-nums; }
+.total td { font-weight:800; font-size:15px; border-bottom:none; }
+.meta { display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-top:18px; }
+.box { background:#f9fafb; border:1px solid #e5e7eb; border-radius:6px; padding:10px; }
+.notice { margin-top:18px; border:2px solid #dc2626; background:#fef2f2; padding:10px; border-radius:6px; }
+.foot { margin-top:30px; font-size:9px; color:#9ca3af; }
+.demo { position:fixed; bottom:0; left:0; right:0; text-align:center; font-size:8px; color:#9ca3af; }
+</style></head><body>
+<div class="top"><div><div class="brand">northwind.example.com hosting</div><div class="muted">host.example.com · Web hosting</div><div class="muted">billing@example.com</div></div><div style="text-align:end"><h1>INVOICE</h1></div></div>
+<div class="meta"><div class="box"><b>Customer:</b> Northwind Industrial<br>Plan: Business Pro (monthly)</div><div class="box"><b>Invoice no:</b> TEST-HOST-2611-UPG<br><b>Date:</b> 2026-11-14<br><b>Due:</b> 2026-11-21<br><b>Currency:</b> USD</div></div>
+<table><thead><tr><th>Description</th><th class="num">Qty</th><th class="num">Unit price</th><th class="num">Amount</th></tr></thead>
+<tbody><tr><td>Business Pro hosting plan, Nov 2026 (monthly subscription)</td><td class='num'>1</td><td class='num'>$40.00</td><td class='num'>$40.00</td></tr><tr><td>SSL certificate + daily backups</td><td class='num'>1</td><td class='num'>$8.00</td><td class='num'>$8.00</td></tr><tr class="total"><td colspan="3">Total due (USD)</td><td class="num">$48.00</td></tr></tbody></table>
+
+<div class="foot"></div>
+<div class="demo">SAMPLE INVOICE FOR A TESTNET DEMO · fictional company · not a real bill</div>
+</body></html>
