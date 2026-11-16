@@ -7,7 +7,6 @@ import { BudgetCard, RunCard, TreasuryCard } from "./components/Overview";
 import { BillCard } from "./components/BillCard";
 import { ActivityPanel } from "./components/Activity";
 import { PolicyEditor } from "./components/PolicyEditor";
-import { ComparisonPanel } from "./components/Comparison";
 import { MandateModal } from "./components/MandateModal";
 import { AddMerchantButton } from "./components/AddMerchant";
 import { UploadInvoiceButton } from "./components/UploadInvoice";
@@ -193,19 +192,13 @@ export default function App() {
             </aside>
           </section>
 
-          <section className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-            <div>
-              <SectionTitle>{t("Owner controls", "تحكم صاحب الشركة")}</SectionTitle>
+          <section>
+            <SectionTitle>{t("Owner controls", "تحكم صاحب الشركة")}</SectionTitle>
+            <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
               <fieldset disabled={ro} className="min-w-0">
                 <PolicyEditor s={s} onSaved={refresh} />
               </fieldset>
-              <div className="mt-6">
-                <PurchaseOrders s={s} />
-              </div>
-            </div>
-            <div>
-              <SectionTitle>{t("Why stablecoins for suppliers", "ليه العملات المستقرة للموردين")}</SectionTitle>
-              <ComparisonPanel parts={s.bills.find((b) => b.billId === "parts_supplier")} />
+              <PurchaseOrders s={s} />
             </div>
           </section>
 
