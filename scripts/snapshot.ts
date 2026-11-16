@@ -15,11 +15,13 @@ import { getAddressFor } from "../src/config/wallets.js";
 import { getUsdcBalance } from "../src/wallets/balance.js";
 import { buildState, mandateView } from "../src/api/state.js";
 import { mandates } from "../src/billing/service.js";
-import { DATA_DIR, readJson, writeJson } from "../src/store/json.js";
+import { DATA_DIR, assertDeletable, readJson, writeJson } from "../src/store/json.js";
 import type { LiveLogLine } from "../src/api/types.js";
 
 const OUT = resolve(process.cwd(), process.argv[2] ?? "share");
 if (!OUT.startsWith(process.cwd())) throw new Error("Output folder must be inside the project");
+// The output folder is deleted and rebuilt, so it must not be (or contain) docs/sample-run, or the project root.
+assertDeletable(OUT);
 
 await getPublicClient(); // testnet guard
 console.log("Reading the treasury balance…");
